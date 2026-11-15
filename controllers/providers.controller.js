@@ -53,8 +53,8 @@ const editProvider = async (req, res) => {
 // DELETE
 const deleteProvider = async (req, res) => {
     try {
-        const CIF = req.body.CIF;
-        let answer = await providerService.deleteProvider(CIF);
+        const company_name = req.body.company_name;
+        let answer = await providerService.deleteProvider(company_name);
 
         if (answer === null)
             return res.status(404).json({ msj: "ERROR: proveedor no encontrado" });

@@ -27,8 +27,8 @@ const editProvider = async (data) => {
     return result;
 };
 
-const deleteProvider = async (CIF) => {
-    const provider = await Provider.findOne({ CIF });
+const deleteProvider = async (company_name) => {
+    const provider = await Provider.findOne({ company_name });
 
     if (!provider)
         return null;
@@ -40,7 +40,7 @@ const deleteProvider = async (CIF) => {
     if (products)
         return false;
 
-    const result = await Provider.findOneAndDelete({ CIF });
+    const result = await Provider.findOneAndDelete({ company_name });
 
     return result;
 };
